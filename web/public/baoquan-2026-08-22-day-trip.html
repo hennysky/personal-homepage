@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16352f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%2316352f'/%3E%3Cpath d='M14 42c10-18 24-18 36 0' fill='none' stroke='%23f1b45c' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='24' r='7' fill='%23d8eee8'/%3E%3C/svg%3E">
+  <link rel="canonical" href="https://yinqijun.com/baoquan.html">
+  <title>宝泉｜8.22 周六一日往返攻略</title>
+  <style>
+    :root {
+      --deep: #122c2a;
+      --pine: #16352f;
+      --pine-2: #1d4b43;
+      --water: #2f8a82;
+      --mint: #d8eee8;
+      --mist: #edf5f0;
+      --paper: #fbfaf5;
+      --sand: #f4ead9;
+      --sun: #f1b45c;
+      --coral: #d66252;
+      --ink: #17322e;
+      --muted: #6b7e77;
+      --line: #d7e3dc;
+      --shadow: 0 22px 60px rgba(21, 55, 48, .12);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: auto; }
+    html, body { overflow-x: clip; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 7% 2%, rgba(47, 138, 130, .16), transparent 24rem),
+        radial-gradient(circle at 92% 18%, rgba(241, 180, 92, .20), transparent 25rem),
+        linear-gradient(145deg, #eef7f2 0%, #fbfaf5 42%, #f7efe2 100%);
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.65;
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      content: "";
+      opacity: .28;
+      background-image: linear-gradient(rgba(18, 44, 42, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(18, 44, 42, .035) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+
+    a { color: inherit; }
+    .shell { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--water);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 24px; height: 2px; content: ""; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: "Iowan Old Style", "Baskerville", "STSong", "Songti SC", serif; letter-spacing: -.035em; }
+    h1 { margin-bottom: 20px; font-size: clamp(42px, 7vw, 82px); line-height: .98; }
+    h2 { margin-bottom: 14px; font-size: clamp(30px, 4vw, 48px); line-height: 1.04; }
+    h3 { margin-bottom: 9px; font-size: 25px; line-height: 1.1; }
+    .muted { color: var(--muted); }
+    .small { font-size: 12px; }
+
+    .hero { position: relative; padding: 42px 0 40px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 30px; align-items: end; }
+    .hero-copy { position: relative; z-index: 2; animation: rise .8s ease both; }
+    .hero-copy p { max-width: 600px; margin-bottom: 0; color: #4f6860; font-size: 18px; }
+    .hero-copy strong { color: var(--coral); }
+    .hero-mark {
+      position: relative;
+      min-height: 286px;
+      padding: 26px;
+      border-radius: 40% 58% 35% 55% / 46% 38% 60% 52%;
+      color: var(--paper);
+      background:
+        radial-gradient(circle at 25% 20%, rgba(255,255,255,.26), transparent 16%),
+        linear-gradient(145deg, #2c8378, #173c36 68%, #112724);
+      box-shadow: var(--shadow);
+      transform: rotate(3deg);
+      overflow: hidden;
+      animation: float-in 1s .1s ease both;
+    }
+    .hero-mark::before, .hero-mark::after { position: absolute; content: ""; border: 1px solid rgba(255,255,255,.23); border-radius: 50%; }
+    .hero-mark::before { width: 280px; height: 280px; right: -64px; top: -82px; }
+    .hero-mark::after { width: 180px; height: 180px; left: -74px; bottom: -88px; }
+    .mark-inner { position: relative; z-index: 1; transform: rotate(-3deg); }
+    .mark-date { display: block; color: #bfe6de; font-size: 14px; font-weight: 700; letter-spacing: .14em; }
+    .mark-big { display: block; margin: 20px 0 10px; color: #fff8e9; font-family: "Iowan Old Style", "Baskerville", serif; font-size: 76px; line-height: .8; }
+    .mark-note { color: #e8f4ee; font-size: 14px; }
+
+    .topbar { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 0; }
+    .chip { display: inline-flex; align-items: center; gap: 7px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--pine-2); background: rgba(255,255,255,.7); font-size: 13px; font-weight: 700; }
+    .chip.alert { border-color: rgba(214,98,82,.28); color: #a84339; background: #fff0eb; }
+    .chip::before { width: 6px; height: 6px; border-radius: 50%; content: ""; background: var(--sun); }
+    .chip.alert::before { background: var(--coral); }
+
+    section { padding: 50px 0; }
+    .section-head { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 22px; }
+    .section-head p { max-width: 430px; margin-bottom: 2px; color: var(--muted); font-size: 14px; }
+
+    .verdict { display: grid; grid-template-columns: 1.05fr .95fr; gap: 18px; }
+    .card { border: 1px solid rgba(215, 227, 220, .9); border-radius: var(--radius-lg); background: rgba(255,255,255,.94); box-shadow: 0 12px 36px rgba(30, 68, 57, .06); }
+    .verdict-main { position: relative; padding: 28px; color: var(--paper); background: var(--deep); overflow: hidden; }
+    .verdict-main::after { position: absolute; right: -80px; bottom: -110px; width: 280px; height: 280px; border: 1px solid rgba(216,238,232,.25); border-radius: 50%; content: ""; }
+    .verdict-main h3 { position: relative; z-index: 1; margin-bottom: 12px; color: #fff8e9; font-size: 31px; }
+    .verdict-main p { position: relative; z-index: 1; margin-bottom: 18px; color: #cbe1da; }
+    .price-line { display: flex; align-items: baseline; gap: 9px; }
+    .price-line strong { color: var(--sun); font-family: "Iowan Old Style", "Baskerville", serif; font-size: 52px; line-height: 1; }
+    .price-line span { color: #b7d7cf; font-size: 13px; }
+    .verdict-side { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .metric { padding: 20px; }
+    .metric b { display: block; margin-bottom: 6px; color: var(--pine); font-family: "Iowan Old Style", "Baskerville", serif; font-size: 28px; }
+    .metric span { display: block; color: var(--muted); font-size: 13px; }
+
+    .plan-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .plan-choice { display: block; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius-lg); color: var(--ink); background: rgba(255,255,255,.94); box-shadow: 0 12px 30px rgba(30, 68, 57, .06); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+    .plan-choice:hover { box-shadow: 0 16px 34px rgba(30, 68, 57, .12); transform: translateY(-2px); }
+    .plan-choice.featured { color: var(--paper); border-color: var(--pine-2); background: var(--deep); }
+    .plan-choice .plan-label { display: block; margin-bottom: 9px; color: var(--water); font-size: 11px; font-weight: 800; letter-spacing: .14em; }
+    .plan-choice.featured .plan-label { color: #a9ded3; }
+    .plan-choice h3 { margin-bottom: 8px; font-size: 30px; }
+    .plan-choice.featured h3 { color: #fff8e9; }
+    .plan-choice p { margin-bottom: 16px; color: var(--muted); font-size: 13px; }
+    .plan-choice.featured p { color: #c6ded6; }
+    .plan-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .plan-meta span { padding: 7px 9px; border-radius: 8px; color: var(--pine-2); background: var(--mint); font-size: 12px; font-weight: 800; }
+    .plan-choice.featured .plan-meta span { color: var(--pine); background: #d8eee8; }
+
+    .routes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .route-card { position: relative; padding: 26px; overflow: hidden; }
+    .route-card.featured { border-color: #9acdc2; background: linear-gradient(155deg, #f5fffa, #ffffff 56%, #f6ead8); }
+    .route-card.tight { background: linear-gradient(155deg, #fffaf0, #ffffff 58%, #f8efdf); }
+    .route-card .corner { position: absolute; top: 18px; right: 18px; padding: 6px 10px; border-radius: 999px; color: #477067; background: var(--mint); font-size: 11px; font-weight: 800; }
+    .route-card.tight .corner { color: #8b6233; background: #f8e3bd; }
+    .route-label { margin-bottom: 14px; color: var(--water); font-size: 12px; font-weight: 800; letter-spacing: .14em; }
+    .route-card.tight .route-label { color: #ae7334; }
+    .route-card h3 { padding-right: 74px; }
+    .route-desc { min-height: 52px; color: var(--muted); font-size: 14px; }
+    .route-price { display: flex; align-items: baseline; gap: 8px; margin: 18px 0; }
+    .route-price strong { font-family: "Iowan Old Style", "Baskerville", serif; font-size: 42px; line-height: 1; }
+    .route-price span { color: var(--muted); font-size: 12px; }
+    .route-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-bottom: 20px; }
+    .meta-box { padding: 12px; border-radius: 13px; background: rgba(216,238,232,.5); }
+    .tight .meta-box { background: rgba(244,234,217,.8); }
+    .meta-box b { display: block; margin-bottom: 3px; color: var(--pine); font-size: 13px; }
+    .meta-box span { color: var(--muted); font-size: 12px; }
+    .included { margin: 0 0 20px; padding: 0; list-style: none; color: #526c63; font-size: 13px; }
+    .included li { position: relative; margin: 7px 0; padding-left: 20px; }
+    .included li::before { position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; content: ""; background: var(--water); }
+    .tight .included li::before { background: var(--sun); }
+    .route-foot { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding-top: 16px; border-top: 1px dashed var(--line); }
+    .route-foot small { color: var(--muted); font-size: 11px; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 10px 15px; border: 0; border-radius: 12px; color: #fff; background: var(--pine); font-size: 13px; font-weight: 800; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .btn:hover { background: var(--water); box-shadow: 0 8px 18px rgba(47,138,130,.22); transform: translateY(-2px); }
+    .btn.secondary { color: var(--pine); background: var(--mint); }
+    .btn.secondary:hover { color: #fff; background: var(--water); }
+    .btn.ghost { color: var(--pine-2); background: #fff; border: 1px solid var(--line); }
+
+    .timeline-wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: 18px; }
+    .timeline-intro { padding: 28px; color: var(--paper); background: linear-gradient(160deg, var(--pine-2), var(--deep)); }
+    .timeline-intro h3 { color: #fff8e9; font-size: 33px; }
+    .timeline-intro p { color: #c8dfd7; font-size: 14px; }
+    .rule { margin-top: 25px; padding-top: 18px; border-top: 1px solid rgba(216,238,232,.2); color: #b7d7cf; font-size: 13px; }
+    .rule strong { display: block; margin-bottom: 5px; color: var(--sun); font-family: "Iowan Old Style", "Baskerville", serif; font-size: 26px; }
+    .timeline { padding: 22px 24px; }
+    .event { display: grid; grid-template-columns: 72px 18px 1fr; gap: 12px; min-height: 72px; }
+    .event:last-child { min-height: 0; }
+    .event-time { padding-top: 1px; color: var(--pine-2); font-family: "Iowan Old Style", "Baskerville", serif; font-size: 20px; font-weight: 700; }
+    .event-line { position: relative; display: flex; justify-content: center; }
+    .event-line::before { width: 10px; height: 10px; margin-top: 8px; border: 3px solid var(--mint); border-radius: 50%; content: ""; background: var(--water); z-index: 1; }
+    .event-line::after { position: absolute; top: 20px; bottom: -4px; width: 1px; content: ""; background: var(--line); }
+    .event:last-child .event-line::after { display: none; }
+    .event-body b { display: block; margin-bottom: 3px; font-size: 14px; }
+    .event-body span { display: block; color: var(--muted); font-size: 12px; }
+    .event-body .tag { display: inline-block; width: auto; margin-top: 6px; padding: 3px 7px; border-radius: 6px; color: #9c4e3f; background: #fff0eb; font-size: 11px; }
+
+    .compare { overflow: hidden; }
+    .table-scroll { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 680px; }
+    th, td { padding: 15px 16px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--muted); background: #f3f7f3; font-size: 12px; font-weight: 800; }
+    td { font-size: 13px; }
+    td strong { color: var(--pine); }
+    tr:last-child td { border-bottom: 0; }
+    .status { display: inline-flex; padding: 4px 8px; border-radius: 999px; font-size: 11px; font-weight: 800; }
+    .status.good { color: #236b5b; background: #dcf1e9; }
+    .status.warn { color: #96622e; background: #f8e6c7; }
+    .status.stop { color: #a84339; background: #ffe8e3; }
+
+    .prices { display: grid; grid-template-columns: 1fr .82fr; gap: 18px; }
+    .price-card { padding: 25px; }
+    .price-row { display: grid; grid-template-columns: 1.1fr .6fr .9fr; gap: 12px; align-items: center; padding: 14px 0; border-bottom: 1px dashed var(--line); font-size: 13px; }
+    .price-row:last-child { border-bottom: 0; }
+    .price-row b { color: var(--pine); }
+    .price-row strong { color: var(--coral); font-size: 19px; }
+    .price-row span { color: var(--muted); font-size: 11px; }
+    .booking-list { display: grid; gap: 10px; }
+    .booking { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.72); }
+    .booking b { display: block; margin-bottom: 2px; font-size: 13px; }
+    .booking span { display: block; color: var(--muted); font-size: 11px; }
+    .booking a { flex: 0 0 auto; color: var(--water); font-size: 12px; font-weight: 800; text-decoration: none; }
+    .booking a:hover { text-decoration: underline; }
+
+    .budget { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .budget-card { padding: 26px; }
+    .budget-card.recommended { color: var(--paper); background: var(--deep); }
+    .budget-card.recommended h3, .budget-card.recommended b { color: #fff8e9; }
+    .budget-card.recommended .budget-total { color: var(--sun); }
+    .budget-total { display: block; margin: 10px 0 14px; color: var(--coral); font-family: "Iowan Old Style", "Baskerville", serif; font-size: 46px; line-height: 1; }
+    .budget-card p { color: var(--muted); font-size: 13px; }
+    .budget-card.recommended p { color: #bed6ce; }
+    .budget-lines { margin: 0; padding: 0; list-style: none; font-size: 13px; }
+    .budget-lines li { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px dashed rgba(215,227,220,.5); }
+    .budget-lines li:last-child { border-bottom: 0; }
+    .budget-lines span:last-child { font-weight: 800; }
+
+    .weather-band { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-bottom: 18px; overflow: hidden; }
+    .weather-cell { padding: 20px 24px; background: rgba(255,255,255,.72); }
+    .weather-cell + .weather-cell { border-left: 1px solid var(--line); background: #fff3e2; }
+    .weather-cell b { display: block; margin-bottom: 4px; color: var(--water); font-size: 12px; letter-spacing: .12em; }
+    .weather-cell strong { display: block; margin-bottom: 4px; color: var(--pine); font-family: "Iowan Old Style", "Baskerville", serif; font-size: 25px; }
+    .weather-cell span { color: var(--muted); font-size: 12px; }
+    .gear-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+    .gear-card { padding: 24px; }
+    .gear-kicker { display: inline-block; margin-bottom: 10px; color: var(--water); font-size: 11px; font-weight: 800; letter-spacing: .14em; }
+    .gear-card h3 { margin-bottom: 12px; }
+    .gear-list { margin: 0; padding: 0; list-style: none; color: #526c63; font-size: 13px; }
+    .gear-list li { position: relative; margin: 9px 0; padding-left: 18px; }
+    .gear-list li::before { position: absolute; left: 0; top: .62em; width: 7px; height: 7px; border-radius: 50%; content: ""; background: var(--water); }
+    .project-row { padding: 11px 0; border-bottom: 1px dashed var(--line); font-size: 13px; }
+    .project-row:last-child { border-bottom: 0; }
+    .project-row b { display: block; margin-bottom: 3px; color: var(--pine); }
+    .project-row span { color: var(--muted); }
+    .weight-callout { margin-top: 14px; padding: 13px; border-radius: 13px; color: #477067; background: var(--mint); font-size: 13px; }
+    .weight-callout strong { display: block; color: var(--pine); font-family: "Iowan Old Style", "Baskerville", serif; font-size: 27px; line-height: 1.1; }
+
+    .photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .photo-card { overflow: hidden; margin: 0; min-width: 0; }
+    .photo-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--mist); }
+    .photo-caption { padding: 15px 16px 16px; }
+    .photo-caption h3 { margin: 7px 0 5px; font-size: 22px; }
+    .photo-caption p { min-height: 42px; margin-bottom: 9px; color: var(--muted); font-size: 12px; }
+    .photo-caption small { color: #82928b; font-size: 10px; }
+    .route-tag { display: inline-flex; padding: 4px 7px; border-radius: 6px; color: #39756c; background: var(--mint); font-size: 10px; font-weight: 800; }
+    .route-tag.alt { color: #96652f; background: #f8e6c7; }
+    .reviews-head { display: flex; justify-content: space-between; gap: 18px; align-items: end; margin: 34px 0 16px; }
+    .reviews-head p { max-width: 440px; margin-bottom: 0; color: var(--muted); font-size: 13px; }
+    .review-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .review-card { overflow: hidden; min-width: 0; }
+    .review-card img { display: block; width: 100%; aspect-ratio: 1.1; object-fit: cover; background: var(--mist); }
+    .review-body { padding: 14px 15px 16px; }
+    .review-body p { min-height: 62px; margin: 8px 0 10px; color: #526c63; font-size: 12px; }
+    .review-meta { display: flex; justify-content: space-between; gap: 8px; color: #82928b; font-size: 10px; }
+    .review-meta a { color: var(--water); text-decoration: none; }
+    .review-meta a:hover { text-decoration: underline; }
+    .rail-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+    .rail-card { padding: 25px; }
+    .rail-card.featured { color: var(--paper); background: linear-gradient(155deg, #1d4b43, #122c2a); }
+    .rail-card.featured h3 { color: #fff8e9; }
+    .rail-card.featured p, .rail-card.featured .rail-step span { color: #c6ded6; }
+    .rail-card h3 { margin-bottom: 10px; }
+    .rail-intro { margin-bottom: 18px; color: var(--muted); font-size: 13px; }
+    .rail-card.featured .rail-intro { color: #c6ded6; }
+    .rail-steps { display: grid; gap: 10px; }
+    .rail-step { display: grid; grid-template-columns: 82px 1fr; gap: 12px; padding: 11px 0; border-bottom: 1px dashed rgba(215,227,220,.45); }
+    .rail-step:last-child { border-bottom: 0; }
+    .rail-step b { color: var(--sun); font-family: "Iowan Old Style", "Baskerville", serif; font-size: 21px; line-height: 1.2; }
+    .rail-step span { color: var(--muted); font-size: 12px; }
+    .rail-price { display: block; margin: 8px 0 12px; color: var(--coral); font-family: "Iowan Old Style", "Baskerville", serif; font-size: 42px; line-height: 1; }
+    .rail-card.featured .rail-price { color: var(--sun); }
+    .rail-list { margin: 0 0 18px; padding-left: 18px; color: var(--muted); font-size: 13px; }
+    .rail-card.featured .rail-list { color: #c6ded6; }
+    .rail-list li { margin: 7px 0; }
+    .rail-actions { display: flex; flex-wrap: wrap; gap: 9px; }
+
+    .notice { display: grid; grid-template-columns: 1.05fr .95fr; gap: 18px; }
+    .notice-main { padding: 28px; border: 1px solid #f0c8bd; background: #fff1ed; }
+    .notice-main h3 { color: #9f4037; }
+    .notice-main p { color: #784d46; font-size: 14px; }
+    .notice-list { margin: 0; padding-left: 20px; color: #784d46; font-size: 13px; }
+    .source-card { padding: 26px; }
+    .source-card a { display: block; margin: 8px 0; color: var(--water); font-size: 13px; font-weight: 800; text-decoration: none; }
+    .source-card a:hover { text-decoration: underline; }
+    footer { padding: 34px 0 60px; color: var(--muted); font-size: 12px; }
+    footer strong { color: var(--pine); }
+
+    .reveal { animation: rise .7s ease both; }
+    .delay-1 { animation-delay: .08s; }
+    .delay-2 { animation-delay: .16s; }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float-in { from { opacity: 0; transform: translate(20px, 14px) rotate(7deg) scale(.97); } to { opacity: 1; transform: rotate(3deg); } }
+
+    @media (max-width: 820px) {
+      .hero { padding-top: 24px; }
+      .hero-grid, .verdict, .timeline-wrap, .prices, .budget, .gear-grid, .notice { grid-template-columns: 1fr; }
+      .plan-grid { grid-template-columns: 1fr; }
+      .rail-grid { grid-template-columns: 1fr; }
+      .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .review-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .reviews-head { display: block; }
+      .reviews-head p { margin-top: 8px; }
+      .weather-band { grid-template-columns: 1fr; }
+      .weather-cell + .weather-cell { border-top: 1px solid var(--line); border-left: 0; }
+      body::before { display: none; }
+      .reveal { animation: none; }
+      .card { box-shadow: 0 8px 22px rgba(30, 68, 57, .06); }
+      .hero-mark { min-height: 190px; border-radius: 34px; transform: none; }
+      .mark-inner { transform: none; }
+      .mark-big { margin-top: 18px; font-size: 58px; }
+      .routes { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 10px; }
+    }
+    @media (max-width: 520px) {
+      .shell { width: min(100% - 22px, 1160px); }
+      section { padding: 34px 0; }
+      h1 { font-size: 47px; }
+      h2 { font-size: 36px; }
+      .verdict-side, .route-meta { grid-template-columns: 1fr 1fr; }
+      .verdict-main, .route-card, .timeline-intro, .timeline, .price-card, .budget-card, .gear-card, .weather-cell, .notice-main, .source-card, .plan-choice { padding: 21px; }
+      .photo-grid, .review-grid { grid-template-columns: 1fr; }
+      .photo-caption { padding: 12px; }
+      .photo-caption h3 { font-size: 19px; }
+      .photo-caption p { min-height: 0; }
+      .review-body { padding: 12px; }
+      .review-body p { min-height: 0; }
+      .event { grid-template-columns: 58px 18px 1fr; gap: 8px; }
+      .event-time { font-size: 17px; }
+      .price-row { grid-template-columns: 1fr .6fr; }
+      .price-row span { grid-column: 1 / -1; }
+      .route-foot { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="shell">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">SATURDAY · 2026.08.22</div>
+          <h1>宝泉，<br><span style="color:var(--water)">当天回。</span></h1>
+          <p>给两位不会开车的女生做的周六一日往返方案。核心不是把景区塞满，而是<strong>在 21:00 前稳稳回到中鼎翡翠</strong>。</p>
+          <div class="topbar">
+            <span class="chip alert">21:00 前回到中鼎翡翠</span>
+            <span class="chip">当前平台数据：2026.08.20 核验</span>
+            <span class="chip">两人｜无自驾｜可短途打车</span>
+          </div>
+        </div>
+        <div class="hero-mark" aria-label="8月22日宝泉行程标记">
+          <div class="mark-inner">
+            <span class="mark-date">08 / 22 · DAY TRIP</span>
+            <span class="mark-big">宝泉</span>
+            <span class="mark-note">早起版 / 晚起版 · 按睡眠和游玩时间选</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="reveal" id="verdict">
+      <div class="section-head">
+        <div><div class="eyebrow">先看结论</div><h2>把返程当成行程的一部分。</h2></div>
+        <p>当前平台有低价双园产品，但其中一款显示 22:20 才回郑州，直接排除。下面只保留能对得上 21:00 硬约束的路线。</p>
+      </div>
+      <div class="verdict">
+        <article class="card verdict-main">
+          <div class="eyebrow" style="color:#9ed8ce">默认建议：方案一</div>
+          <h3>早起版 · 大峡谷一日游</h3>
+          <p>当前去哪儿成人产品显示 ¥148/人起，06:30 郑州集合，约 08:30 到景区，14:30 返程，约 18:00 回到绿城广场。两人不含餐约 ¥296，留足市内打车缓冲。</p>
+          <div class="price-line"><strong>¥296</strong><span>两人平台产品起价，不含餐与中鼎翡翠接驳</span></div>
+        </article>
+        <div class="verdict-side">
+          <div class="card metric"><b>06:30</b><span>绿城广场集合<br>具体点位以前一晚导游通知为准</span></div>
+          <div class="card metric"><b>18:00</b><span>平台显示回到<br>郑州绿城广场</span></div>
+          <div class="card metric"><b>¥148</b><span>大峡谷一日游<br>平台当前成人起价</span></div>
+          <div class="card metric"><b>20:30</b><span>建议目标：<br>最晚提前回到家</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal delay-1" id="plans">
+      <div class="section-head">
+        <div><div class="eyebrow">两套交通方案</div><h2>先选早起，还是晚起。</h2></div>
+        <p>两套方案不会同时执行：早起版换更多景区时间，晚起版换更轻松的早晨。</p>
+      </div>
+      <div class="plan-grid">
+        <a class="plan-choice featured" href="#timeline">
+          <span class="plan-label">方案一 · 早起版 · 直通车/旅游大巴</span>
+          <h3>早起，玩得更完整</h3>
+          <p>04:50 起床，06:30 绿城广场集合，约 08:30 到宝泉，18:00 左右回郑州；优先推荐。</p>
+          <div class="plan-meta"><span>大峡谷主线</span><span>¥148/人起</span><span>返程余量足</span></div>
+        </a>
+        <a class="plan-choice" href="#highspeed">
+          <span class="plan-label">方案二 · 晚起版 · 高铁 + 站点巴士</span>
+          <h3>晚起，少一点困</h3>
+          <p>05:50 起床，07:42 左右高铁，约 10:00–10:30 到宝泉，15:30 离园；只建议玩大峡谷。</p>
+          <div class="plan-meta"><span>高铁接驳</span><span>¥534–614/两人</span><span>景区时间更短</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="reveal delay-1" id="routes">
+      <div class="section-head">
+        <div><div class="eyebrow">景区玩法</div><h2>选好交通，再选看哪边。</h2></div>
+        <p>大峡谷和双园区是景区内容选择，不是另外两套出发方案；早起/晚起请看上面的方案卡。</p>
+      </div>
+      <div class="routes">
+        <article class="card route-card featured">
+          <span class="corner">21:00 友好</span>
+          <div class="route-label">景区内容 A · 更稳</div>
+          <h3>大峡谷主线</h3>
+          <p class="route-desc">浅滩、鱼鳞坝、游龙半岛、瀑布群，行程更松，返程缓冲更厚。</p>
+          <div class="route-price"><strong>¥148</strong><span>/人起 · 两人 ¥296 起</span></div>
+          <div class="route-meta">
+            <div class="meta-box"><b>06:30</b><span>绿城广场集合</span></div>
+            <div class="meta-box"><b>18:00</b><span>回到绿城广场</span></div>
+          </div>
+          <ul class="included">
+            <li>含郑州往返旅游车、大峡谷首道门票、导游</li>
+            <li>午餐、自费水上项目和市内接驳不含</li>
+            <li>平台提示：前一晚约 20:00 通知具体集合点</li>
+          </ul>
+          <div class="route-foot"><small>从中鼎翡翠打车去绿城广场，建议至少预留 45 分钟。</small><a class="btn" href="https://touch.piao.qunar.com/touch/product/spu/onedaytour.htm?spuId=4257609" target="_blank" rel="noopener">查看当前商品 ↗</a></div>
+        </article>
+
+        <article class="card route-card tight">
+          <span class="corner">内容更全 · 时间更紧</span>
+          <div class="route-label">景区内容 B · 双园</div>
+          <h3>崖天下 + 大峡谷</h3>
+          <p class="route-desc">两园门票、电梯、索道、景交车都打包，视觉密度更高，但回郑时间逼近晚间。</p>
+          <div class="route-price"><strong>¥219</strong><span>/人起 · 两人 ¥438 起</span></div>
+          <div class="route-meta">
+            <div class="meta-box"><b>06:30 / 07:00</b><span>绿城广场 / 人民会堂</span></div>
+            <div class="meta-box"><b>20:00</b><span>回到人民会堂左右</span></div>
+          </div>
+          <ul class="included">
+            <li>约 10:40 崖天下，12:40 大峡谷，16:30 左右返程</li>
+            <li>含两园门票、电梯、索道、景交车；餐饮不含</li>
+            <li>从指定点回中鼎翡翠还要再打车，堵车时风险更高</li>
+          </ul>
+          <div class="route-foot"><small>只有 8 月 22 日确认可订且接受晚间缓冲时再选。</small><a class="btn secondary" href="https://touch.piao.qunar.com/touch/product/spu/onedaytour.htm?spuId=3608687" target="_blank" rel="noopener">查看当前商品 ↗</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="reveal" id="gallery">
+      <div class="section-head">
+        <div><div class="eyebrow">景点图鉴</div><h2>先看景，再选路线。</h2></div>
+        <p>照片只用于识别景点；水量、天气和人流会变化。大峡谷适合亲水看瀑布，崖天下适合观景和高空项目。</p>
+      </div>
+      <div class="photo-grid">
+        <figure class="card photo-card">
+          <img src="assets/baoquan/grand-canyon-waterfall.jpg" alt="宝泉大峡谷瀑布和石阶步道" loading="lazy">
+          <figcaption class="photo-caption"><span class="route-tag">大峡谷主线</span><h3>瀑布群 · 亲水步道</h3><p>沿水走、看层叠瀑布，适合第一次去和想轻松游玩的人。</p><small>图片来源：携程攻略</small></figcaption>
+        </figure>
+        <figure class="card photo-card">
+          <img src="assets/baoquan/jianlong-waterfall.jpg" alt="宝泉峡谷高落差瀑布" loading="lazy">
+          <figcaption class="photo-caption"><span class="route-tag">大峡谷主线</span><h3>见龙瀑 · 观瀑台</h3><p>大峡谷的核心瀑布景观，雨后水量通常更有气势。</p><small>图片来源：携程攻略</small></figcaption>
+        </figure>
+        <figure class="card photo-card">
+          <img src="assets/baoquan/review-water.jpg" alt="宝泉水上活动和碧绿色水面" loading="lazy">
+          <figcaption class="photo-caption"><span class="route-tag">大峡谷主线</span><h3>浅滩 · 玩水区</h3><p>想下水或体验桨板，带水鞋、防水袋和换洗衣物。</p><small>图片来源：去哪儿用户评价</small></figcaption>
+        </figure>
+        <figure class="card photo-card">
+          <img src="assets/baoquan/review-lake.jpg" alt="宝泉高峡平湖和山谷远景" loading="lazy">
+          <figcaption class="photo-caption"><span class="route-tag alt">双园区</span><h3>游龙湾 · 高峡平湖</h3><p>更适合拍远景和山水大景，需要安排崖天下一侧的时间。</p><small>图片来源：去哪儿用户评价</small></figcaption>
+        </figure>
+        <figure class="card photo-card">
+          <img src="assets/baoquan/review-viewpoint.jpg" alt="宝泉崖天下观景台俯瞰山谷" loading="lazy">
+          <figcaption class="photo-caption"><span class="route-tag alt">双园区</span><h3>崖天下 · 观景台</h3><p>看峡谷全景、玻璃观景和悬崖项目，视觉刺激更强。</p><small>图片来源：去哪儿用户评价</small></figcaption>
+        </figure>
+        <figure class="card photo-card">
+          <img src="assets/baoquan/cableway.png" alt="宝泉洛伽寺索道缆车" loading="lazy">
+          <figcaption class="photo-caption"><span class="route-tag alt">双园区</span><h3>洛伽寺索道 · 上山</h3><p>双园区常见游览环节；具体开放情况以当天景区安排为准。</p><small>图片来源：宝泉官方</small></figcaption>
+        </figure>
+      </div>
+      <div class="reviews-head">
+        <div><div class="eyebrow">真实评价</div><h3>游客实际怎么玩</h3></div>
+        <p>下面是去哪儿公开评价的摘要和配图，保留评价日期；点击“原评价”可查看平台上下文。</p>
+      </div>
+      <div class="review-grid">
+        <article class="card review-card">
+          <img src="assets/baoquan/review-water.jpg" alt="游客在宝泉水面体验桨板" loading="lazy">
+          <div class="review-body"><span class="route-tag">玩水反馈</span><p>桨板等水上活动体验感很好，水上项目可以占掉一整个下午。</p><div class="review-meta"><span>去哪儿用户 · 2026.07.03</span><a href="https://touch.piao.qunar.com/touch/getCommentsAndTravelTips.htm?sightId=196608&pageSize=10&pageNum=1&fromType=SIGHT" target="_blank" rel="noopener">原评价 ↗</a></div></div>
+        </article>
+        <article class="card review-card">
+          <img src="assets/baoquan/review-viewpoint.jpg" alt="游客拍摄的宝泉峡谷观景图" loading="lazy">
+          <div class="review-body"><span class="route-tag alt">双园提醒</span><p>配套设施和景色评价不错，但一天想认真玩完两园，体力和时间都会比较紧。</p><div class="review-meta"><span>去哪儿用户 · 2026.08.06</span><a href="https://touch.piao.qunar.com/touch/getCommentsAndTravelTips.htm?sightId=196608&pageSize=10&pageNum=1&fromType=SIGHT" target="_blank" rel="noopener">原评价 ↗</a></div></div>
+        </article>
+        <article class="card review-card">
+          <img src="assets/baoquan/review-lake.jpg" alt="游客拍摄的宝泉高峡平湖" loading="lazy">
+          <div class="review-body"><span class="route-tag">天气提醒</span><p>景色很美；遇到暴雨或打卡点排队时，原本的游玩计划会被压缩，鞋子和天气要准备好。</p><div class="review-meta"><span>去哪儿用户 · 2026.07.02</span><a href="https://touch.piao.qunar.com/touch/getCommentsAndTravelTips.htm?sightId=196608&pageSize=10&pageNum=1&fromType=SIGHT" target="_blank" rel="noopener">原评价 ↗</a></div></div>
+        </article>
+        <article class="card review-card">
+          <img src="assets/baoquan/review-waterfall.jpg" alt="游客拍摄的宝泉瀑布" loading="lazy">
+          <div class="review-body"><span class="route-tag">吃饭提醒</span><p>景色和服务整体评价不错；景区周边餐饮价格偏高，推荐自带简餐。</p><div class="review-meta"><span>去哪儿用户 · 2026.07.05</span><a href="https://touch.piao.qunar.com/touch/getCommentsAndTravelTips.htm?sightId=196608&pageSize=10&pageNum=1&fromType=SIGHT" target="_blank" rel="noopener">原评价 ↗</a></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="reveal delay-2" id="timeline">
+      <div class="section-head">
+        <div><div class="eyebrow">方案一 · 早起版</div><h2>直通车/旅游大巴，怎么走。</h2></div>
+        <p>按当前平台常见的绿城广场集合点估算；前一晚若通知换到别的点，以短信为准。</p>
+      </div>
+      <div class="timeline-wrap">
+        <article class="card timeline-intro">
+          <div class="eyebrow" style="color:#a9ded3">THE SAFE LOOP</div>
+          <h3>先把集合点赶上，景区里再慢慢玩。</h3>
+          <p>中鼎翡翠到绿城广场约 10–12 公里，早晨打车按 40–50 分钟预留；这条线路 14:30 左右返程，比双园产品更有余量。</p>
+          <div class="rule"><strong>硬规则</strong>不为一个额外项目牺牲返程；14:00 后不再临时加项目，按导游通知准时回到集合点。</div>
+        </article>
+        <div class="card timeline">
+          <div class="event"><div class="event-time">04:50</div><div class="event-line"></div><div class="event-body"><b>起床</b><span>洗漱、简单吃点东西，按清单装好小包。</span><span class="tag">建议时间</span></div></div>
+          <div class="event"><div class="event-time">05:20</div><div class="event-line"></div><div class="event-body"><b>叫车，05:30 出门</b><span>目的地填“绿城广场地铁站 D 口/青少年宫”；打车约 10–12 公里，按 40–50 分钟预留。</span></div></div>
+          <div class="event"><div class="event-time">06:10</div><div class="event-line"></div><div class="event-body"><b>到上车点</b><span>核对导游短信、车牌和集合位置；如果订单通知的是其他点，优先按订单调整。</span></div></div>
+          <div class="event"><div class="event-time">06:30</div><div class="event-line"></div><div class="event-body"><b>绿城广场集合</b><span>平台产品显示的集合时间；具体上车点、车牌和导游通知以前一晚消息为准。</span></div></div>
+          <div class="event"><div class="event-time">08:30–09:00</div><div class="event-line"></div><div class="event-body"><b>抵达宝泉大峡谷</b><span>平台行程写明约 2 小时车程，并安排大峡谷亲水、游龙半岛、瀑布群。</span></div></div>
+          <div class="event"><div class="event-time">11:30</div><div class="event-line"></div><div class="event-body"><b>简餐 / 午餐</b><span>平台商品不含午餐，建议提前准备能量棒、面包和水；湿身后补充干衣。</span></div></div>
+          <div class="event"><div class="event-time">12:30–14:30</div><div class="event-line"></div><div class="event-body"><b>继续看瀑布、走浅滩</b><span>平台列出的见龙瀑、观瀑亭、叠翠谷等按体力选择，不要走到最后一刻。</span></div></div>
+          <div class="event"><div class="event-time">14:30</div><div class="event-line"></div><div class="event-body"><b>回到停车点，乘车返郑</b><span>平台商品显示约 2 小时返程，具体受当天路况影响。</span></div></div>
+          <div class="event"><div class="event-time">18:00</div><div class="event-line"></div><div class="event-body"><b>回到绿城广场</b><span>马上叫车回中鼎翡翠；不要临时换成更远的散团点。</span></div></div>
+          <div class="event"><div class="event-time">≤20:30</div><div class="event-line"></div><div class="event-body"><b>建议回到中鼎翡翠</b><span>给 21:00 硬截止留出约 30 分钟，而不是把 21:00 当目标时间。</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal" id="highspeed">
+      <div class="section-head">
+        <div><div class="eyebrow">方案二 · 晚起版</div><h2>高铁 + 站点巴士。</h2></div>
+        <p>如果担心 04:50 起不来，可以改走高铁；但到景区会更晚，建议只玩大峡谷，不建议再塞双园区。</p>
+      </div>
+      <div class="rail-grid">
+        <article class="card rail-card featured">
+          <div class="eyebrow" style="color:#a9ded3">OPTION 02 · HIGH-SPEED</div>
+          <h3>睡晚一点，也能当天回。</h3>
+          <p class="rail-intro">按当前车次参考：郑州东 → 新乡东约 20–25 分钟；到站后优先接新乡高铁东站 → 宝泉的站点巴士。具体车次、巴士班次和余票出发前再确认。</p>
+          <div class="rail-steps">
+            <div class="rail-step"><b>05:50</b><span>起床，洗漱、早餐、轻装检查。</span></div>
+            <div class="rail-step"><b>06:20</b><span>叫车；06:30 出门去郑州东站，按 25–35 分钟车程 + 进站缓冲预留。</span></div>
+            <div class="rail-step"><b>07:42</b><span>参考高铁：郑州东 → 新乡东，约 08:02 到站。</span></div>
+            <div class="rail-step"><b>08:10–08:30</b><span>新乡高铁东站接站点巴士，去程约 ¥35/人；流水班和座位以滴滴小程序为准。</span></div>
+            <div class="rail-step"><b>10:00–10:30</b><span>预计到宝泉，玩大峡谷瀑布、浅滩和鱼鳞坝。</span></div>
+            <div class="rail-step"><b>15:30</b><span>离开景区去新乡东站；优先站点巴士，等不到就打车兜底。</span></div>
+            <div class="rail-step"><b>17:30–20:00</b><span>新乡东返郑州东，回中鼎翡翠；仍按 21:00 前到家留缓冲。</span></div>
+          </div>
+        </article>
+        <article class="card rail-card">
+          <div class="eyebrow">BUDGET · 2 人</div>
+          <h3>晚起版费用估算</h3>
+          <span class="rail-price">¥534–614</span>
+          <p class="rail-intro">不含餐饮和自费项目；站点巴士比新乡东全程打车更省。</p>
+          <ul class="rail-list">
+            <li>高铁：约 ¥37–47/人/程</li>
+            <li>站点巴士：去程 ¥35/人，返程大巴 ¥25/人或商务车 ¥30/人</li>
+            <li>郑州两端打车：预留约 ¥50–80</li>
+            <li>大峡谷成人门票：约 ¥108/人起</li>
+          </ul>
+          <div class="rail-actions"><a class="btn" href="https://m.ctrip.com/html5/trains/zhengzhoudong-xinxiangdong/" target="_blank" rel="noopener">查高铁 ↗</a><a class="btn secondary" href="https://m.sohu.com/a/1048045211_121106991" target="_blank" rel="noopener">看站点巴士 ↗</a></div>
+          <p class="muted small" style="margin:16px 0 0">若新乡东 → 宝泉没有合适班次，再改全程打车；费用可能增加约 ¥300–450，不再算作省钱方案。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="reveal" id="prices">
+      <div class="section-head">
+        <div><div class="eyebrow">价格与入口</div><h2>只写当前能查到的。</h2></div>
+        <p>平台“起价”会随日期、库存、优惠和证件变化；8 月 22 日付款前要再看一次结算页。</p>
+      </div>
+      <div class="prices">
+        <div class="card price-card">
+          <h3>当前平台参考价</h3>
+          <div class="price-row"><b>大峡谷一日游</b><strong>¥148/人起</strong><span>含郑州往返车 + 首道门票 + 导游</span></div>
+          <div class="price-row"><b>双园区一日游</b><strong>¥219/人起</strong><span>含两园门票 + 电梯 + 索道 + 景交车</span></div>
+          <div class="price-row"><b>大峡谷成人门票</b><strong>¥108/人起</strong><span>单独购票，日期与库存下单确认</span></div>
+          <div class="price-row"><b>崖天下 A 线成人票</b><strong>¥238/人</strong><span>当前日期选择可切到 2026-08-22</span></div>
+          <div class="price-row"><b>两园联票成人票</b><strong>¥268/人起</strong><span>去哪儿主票务页当前展示</span></div>
+          <div class="price-row"><b>郑州市区往返直通车</b><strong>¥68/人起</strong><span>8/22 可选；前一天 21:00 前预订</span></div>
+        </div>
+        <div class="card price-card">
+          <h3>可点击预订 / 核验</h3>
+          <div class="booking-list">
+            <div class="booking"><div><b>去哪儿 · 大峡谷一日游</b><span>当前 148 元起，返郑约 18:00</span></div><a href="https://touch.piao.qunar.com/touch/product/spu/onedaytour.htm?spuId=4257609" target="_blank" rel="noopener">打开 ↗</a></div>
+            <div class="booking"><div><b>去哪儿 · 双园区一日游</b><span>当前 219 元起，返郑约 20:00</span></div><a href="https://touch.piao.qunar.com/touch/product/spu/onedaytour.htm?spuId=3608687" target="_blank" rel="noopener">打开 ↗</a></div>
+            <div class="booking"><div><b>去哪儿 · 郑州市区—宝泉往返直通车</b><span>当前 68 元/人起，链接已切到 2026-08-22</span></div><a href="https://touch.piao.qunar.com/touch/order/form.htm?pid=3948095413&amp;priceId=3205501474&amp;classify=1&amp;supplierId=23832&amp;isTuan=false&amp;sid=196608&amp;tuanId=&amp;cat=from_area%3Dmpl_search_s%26pIndex%3D1%26typeIndex%3D15%26typeId%3D200677995&amp;useDate=2026-08-22" target="_blank" rel="noopener">预订 ↗</a></div>
+            <div class="booking"><div><b>去哪儿 · 宝泉票务总页</b><span>选择 8 月 22 日查看票价和库存</span></div><a href="https://touch.piao.qunar.com/touch/detail.htm?cat=from_area%3Dmpl_search_suggest_s&id=196608" target="_blank" rel="noopener">打开 ↗</a></div>
+            <div class="booking"><div><b>飞猪 · 移动端入口</b><span>打开后搜索“河南宝泉旅游区”</span></div><a href="https://m.fliggy.com/" target="_blank" rel="noopener">打开 ↗</a></div>
+            <div class="booking"><div><b>飞猪 · 移动端门票搜索</b><span>移动端首页进入“景点门票”</span></div><a href="https://m.fliggy.com/" target="_blank" rel="noopener">搜索 ↗</a></div>
+            <div class="booking"><div><b>美团 · App / 网页入口</b><span>当前网页有验证墙，不引用未公开价格</span></div><a href="https://i.meituan.com/" target="_blank" rel="noopener">打开 ↗</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal" id="budget">
+      <div class="section-head">
+        <div><div class="eyebrow">两人预算</div><h2>把钱花在门票，不花在赶路。</h2></div>
+        <p>以下均不含餐饮和自费项目；市内打车为预留区间，不是平台实时订单报价。</p>
+      </div>
+      <div class="budget">
+        <article class="card budget-card recommended">
+          <div class="eyebrow" style="color:#9ed8ce">RECOMMENDED</div>
+          <h3>大峡谷主线</h3>
+          <span class="budget-total">¥376–416</span>
+          <p>两人平台产品 ¥296 起 + 市内接驳预留 ¥80–120；不含餐饮和自费项目。</p>
+        </article>
+        <article class="card budget-card">
+          <div class="eyebrow">ALTERNATIVE</div>
+          <h3>双园区路线</h3>
+          <span class="budget-total">¥518–558</span>
+          <p>两人平台产品 ¥438 起 + 市内接驳预留 ¥80–120；不含餐饮和自费项目。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="reveal" id="gear">
+      <div class="section-head">
+        <div><div class="eyebrow">轻装清单</div><h2>带够，不要背重。</h2></div>
+        <p>8 月下旬是高温、玩水和林下步行的组合；两人各背一个小包，比把东西全塞给一个人更舒服。</p>
+      </div>
+      <div class="card weather-band">
+        <div class="weather-cell"><b>8 月 22 日天气提醒</b><strong>约 24–33℃</strong><span>当前预报午间可能有雷阵雨，出发前早上再查一次；薄雨衣比雨伞更适合景区。</span></div>
+        <div class="weather-cell"><b>蚊虫提醒</b><strong>按“会有”准备</strong><span>水边、林下和早晚更容易遇到蚊虫或小飞虫：驱蚊液 + 薄长袖/长裤 + 止痒用品。</span></div>
+      </div>
+      <div class="gear-grid">
+        <article class="card gear-card">
+          <span class="gear-kicker">MUST HAVE</span>
+          <h3>每人一个 20–25L 小包</h3>
+          <ul class="gear-list">
+            <li>身份证、手机、充电宝、少量现金</li>
+            <li>每人 600–1000ml 水 + 能量棒/简餐</li>
+            <li>防晒霜、帽子、墨镜、薄长袖或薄雨衣</li>
+            <li>驱蚊液、止痒膏、纸巾、湿巾、创可贴</li>
+            <li>替换上衣/袜子、塑料袋或防水收纳袋</li>
+            <li>个人药品、发圈；生理期用品按需带</li>
+          </ul>
+        </article>
+        <article class="card gear-card">
+          <span class="gear-kicker">BY ACTIVITY</span>
+          <h3>玩水 + 高空项目</h3>
+          <div class="project-row"><b>大峡谷玩水</b><span>溯溪鞋或有后带凉鞋、手机防水袋、速干衣、湿衣分装袋；不要穿拖鞋。</span></div>
+          <div class="project-row"><b>索道 / 电梯 / 观景台</b><span>轻便小包、帽子和墨镜固定；贵重物品拉链收好，按现场规定存放大包。</span></div>
+          <div class="project-row"><b>秋千 / 过山车 / 飞拉达</b><span>不背大包、不戴长挂饰或耳机；手机和眼镜固定，开放与收费以现场为准。</span></div>
+        </article>
+        <article class="card gear-card">
+          <span class="gear-kicker">PACK LIGHT</span>
+          <h3>别把一天背成负重训练</h3>
+          <p class="muted small">两人各背一个小包，把水和公共用品分开装；不带行李箱、厚外套和多余鞋。</p>
+          <div class="weight-callout"><strong>3–5 kg / 人</strong>含水的实用上限；尽量别让单人超过 6 kg。</div>
+          <p class="muted small" style="margin:14px 0 0">只玩大峡谷时 3–4 kg/人通常够用；双园区再多一件换洗衣物即可。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="reveal" id="notice">
+      <div class="section-head">
+        <div><div class="eyebrow">出发前检查</div><h2>这几件事，别到车上才发现。</h2></div>
+      </div>
+      <div class="notice">
+        <article class="card notice-main">
+          <h3>21:00 是硬截止，不是“差不多”。</h3>
+          <p>双园区约 20:00 才回郑州指定点，回中鼎翡翠还要接驳；想稳妥回家，优先大峡谷主线。</p>
+          <ul class="notice-list"><li>8 月 21 日晚确认导游短信、集合点、车牌和返程解散点。</li><li>大峡谷主线 14:00 后不加项目，按时到返程集合点。</li><li>平台起价、库存和天气都要在出发前再确认。</li></ul>
+        </article>
+        <aside class="card source-card">
+          <h3>当前公开信息</h3>
+          <p class="muted small">核验时间：2026 年 8 月 20 日<br>适用出行日：2026 年 8 月 22 日</p>
+          <a href="https://m.fliggy.com/" target="_blank" rel="noopener">飞猪移动端入口：搜索宝泉并查看票务 ↗</a>
+          <a href="https://touch.piao.qunar.com/touch/detail.htm?cat=from_area%3Dmpl_search_suggest_s&id=196608" target="_blank" rel="noopener">去哪儿当前票务与直通车总页 ↗</a>
+          <a href="https://m.fliggy.com/" target="_blank" rel="noopener">飞猪移动端景点门票入口 ↗</a>
+          <p class="muted small" style="margin:18px 0 0">美团和飞猪部分商品详情需要 App、登录或验证；本页不把未公开字段写成确定信息。</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <strong>宝泉 · 8.22 周六一日往返</strong><br>
+    本页为出行规划参考。交通、票价、库存、天气、集合点和返程时间均可能变化；支付前请再次打开商品页确认 2026-08-22 是否可订。
+  </footer>
+</body>
+</html>

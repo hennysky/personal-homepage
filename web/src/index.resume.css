@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Geist", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-primary: var(--c-primary);
+  --color-accent: var(--c-accent);
+  --color-bg: var(--c-bg);
+  --color-surface: var(--c-surface);
+  --color-surface-hover: var(--c-surface-hover);
+  --color-heading: var(--c-heading);
+  --color-body: var(--c-body);
+  --color-muted: var(--c-muted);
+  --color-border: var(--c-border);
+  --color-card-border: var(--c-card-border);
+}
+
+@layer base {
+  /* LIGHT MODE (Clean, contemporary, warm off-white, matching elaya.design) */
+  :root {
+    color-scheme: light;
+    --c-primary: #18181B;
+    --c-accent: #3B82F6;
+    --c-bg: #F3F4F6;
+    --c-surface: #FFFFFF;
+    --c-surface-hover: #F9FAFB;
+    --c-heading: #111827;
+    --c-body: #4B5563;
+    --c-muted: #9CA3AF;
+    --c-border: rgba(0, 0, 0, 0.08);
+    --c-card-border: rgba(0, 0, 0, 0.06);
+  }
+
+  /* DARK MODE (Deep Obsidian, crisp specular borders) */
+  [data-theme="dark"] {
+    color-scheme: dark;
+    --c-primary: #F4F4F5;
+    --c-accent: #60A5FA;
+    --c-bg: #090B0E;
+    --c-surface: #11141A;
+    --c-surface-hover: #161A22;
+    --c-heading: #F9FAFB;
+    --c-body: #9CA3AF;
+    --c-muted: #6B7280;
+    --c-border: rgba(255, 255, 255, 0.1);
+    --c-card-border: rgba(255, 255, 255, 0.08);
+  }
+
+  body {
+    @apply bg-bg text-body font-sans antialiased;
+    margin: 0;
+    min-height: 100dvh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(59, 130, 246, 0.25);
+    color: var(--c-heading);
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Dot Grid Pattern */
+  .dot-grid {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+    background-size: 14px 14px;
+  }
+  [data-theme="dark"] .dot-grid {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  }
+
+  /* Linear Grid Pattern */
+  .line-grid {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  }
+  [data-theme="dark"] .line-grid {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+
+  /* Ambient Glow in Background */
+  .ambient-glow {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: 
+      radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.03), transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.03), transparent 40%);
+  }
+  [data-theme="dark"] .ambient-glow {
+    background: 
+      radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.06), transparent 50%),
+      radial-gradient(circle at 85% 75%, rgba(99, 102, 241, 0.05), transparent 50%);
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   PRINT STYLES (A4 CLEAN RESUME PDF EXPORT)
+   ════════════════════════════════════════════════════════════ */
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 12px !important;
+  }
+
+  #root {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-avoid-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  * {
+    box-shadow: none !important;
+    border-color: #e5e7eb !important;
+    text-shadow: none !important;
+  }
+}
