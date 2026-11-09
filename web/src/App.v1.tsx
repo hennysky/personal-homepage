@@ -803,7 +803,7 @@ export default function AppV1({ onSwitchVersion }: { onSwitchVersion?: (v: '1.0'
                     rel="noreferrer"
                     className="text-neutral-500 dark:text-neutral-400 hover:text-heading hover:underline transition-colors flex items-center gap-1 font-mono"
                   >
-                    <span>豫ICP备2026000001号-1</span>
+                    <span>豫ICP备2026020086号-1</span>
                   </a>
                 </div>
                 <span className="font-mono text-neutral-400">Geist Design System · Zhengzhou</span>

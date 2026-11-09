@@ -108,7 +108,7 @@ const TOOLBOX = [
 ];
 
 // Henan ICP Filing Number & Official MIIT Link
-const ICP_NUMBER = '豫ICP备2026000001号-1';
+const ICP_NUMBER = '豫ICP备2026020086号-1';
 const MIIT_URL = 'https://beian.miit.gov.cn/';
 
 export default function App() {
