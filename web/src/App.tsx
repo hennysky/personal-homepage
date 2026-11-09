@@ -194,6 +194,7 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.classList.toggle('dark', theme === 'dark');
     localStorage.setItem('theme', theme);
   }, [theme]);
 
@@ -1004,25 +1005,29 @@ export default function App() {
          ════════════════════════════════════════════════════════════ */}
       <AnimatePresence>
         {activeProject && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-black/60 backdrop-blur-md">
+          <div 
+            onClick={() => setActiveProject(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-black/70 backdrop-blur-md"
+          >
             <motion.div
+              onClick={(e) => e.stopPropagation()}
               initial={{ opacity: 0, scale: 0.96, y: 16 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 16 }}
               transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-[28px] border border-black/[0.08] dark:border-white/[0.1] bg-surface text-body shadow-2xl flex flex-col p-6 sm:p-8"
+              className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-[28px] border border-black/[0.08] dark:border-white/[0.12] bg-white dark:bg-[#141820] text-body shadow-2xl flex flex-col p-6 sm:p-8"
             >
               <button
                 onClick={() => setActiveProject(null)}
-                className="absolute top-5 right-5 h-9 w-9 rounded-full bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 flex items-center justify-center text-heading transition-colors"
+                className="absolute top-5 right-5 h-9 w-9 rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 flex items-center justify-center text-neutral-700 dark:text-neutral-200 transition-colors"
                 title={t.modalClose}
               >
                 <X className="w-4 h-4" />
               </button>
 
-              <div className="flex flex-col gap-2 pb-5 border-b border-black/[0.06] dark:border-white/[0.06] pr-10">
+              <div className="flex flex-col gap-2 pb-5 border-b border-black/[0.06] dark:border-white/[0.08] pr-10">
                 <div className="flex items-center gap-2">
-                  <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300 border border-blue-200/50 dark:border-blue-800/50">
+                  <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-950/80 dark:text-blue-300 border border-blue-200/50 dark:border-blue-800/60">
                     {activeProject.tag}
                   </span>
                   <span className="text-xs font-mono text-neutral-400">
@@ -1030,7 +1035,7 @@ export default function App() {
                   </span>
                 </div>
 
-                <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-heading">
+                <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-neutral-900 dark:text-white">
                   {activeProject.title}
                 </h2>
                 <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
@@ -1046,8 +1051,8 @@ export default function App() {
                       onClick={() => setActiveSceneIndex(sIdx)}
                       className={`px-3 py-1.5 rounded-full text-xs font-medium shrink-0 transition-colors ${
                         activeSceneIndex === sIdx
-                          ? 'bg-neutral-900 text-white dark:bg-white dark:text-neutral-900'
-                          : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300'
+                          ? 'bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 shadow-sm'
+                          : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-300'
                       }`}
                     >
                       {sc.title}
@@ -1083,7 +1088,7 @@ export default function App() {
                 </div>
               )}
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4 border-t border-black/[0.06] dark:border-white/[0.06]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4 border-t border-black/[0.06] dark:border-white/[0.08]">
                 <div className="flex flex-col gap-2.5">
                   <h4 className="text-xs font-mono font-medium text-neutral-400 uppercase tracking-wider">
                     {t.contributions}
@@ -1143,22 +1148,28 @@ export default function App() {
          ════════════════════════════════════════════════════════════ */}
       <AnimatePresence>
         {showContactModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md">
+          <div 
+            onClick={() => setShowContactModal(false)}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md"
+          >
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="relative w-full max-w-md rounded-[28px] border border-black/[0.08] dark:border-white/[0.1] bg-surface p-6 sm:p-7 shadow-2xl flex flex-col gap-5 text-body"
+              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="relative w-full max-w-md rounded-[28px] border border-black/[0.08] dark:border-white/[0.12] bg-white dark:bg-[#141820] p-6 sm:p-7 shadow-2xl flex flex-col gap-5 text-body"
             >
               <button
                 onClick={() => setShowContactModal(false)}
-                className="absolute top-5 right-5 h-8 w-8 rounded-full bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center text-heading"
+                className="absolute top-5 right-5 h-8 w-8 rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 flex items-center justify-center text-neutral-700 dark:text-neutral-200 transition-colors"
+                title="关闭"
               >
                 <X className="w-4 h-4" />
               </button>
 
-              <div className="flex flex-col gap-1">
-                <h3 className="text-xl font-semibold text-heading tracking-tight">
+              <div className="flex flex-col gap-1 pr-6">
+                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white tracking-tight">
                   {t.ctaPrimary}
                 </h3>
                 <p className="text-xs text-neutral-500 dark:text-neutral-400">
@@ -1167,44 +1178,44 @@ export default function App() {
               </div>
 
               <div className="flex flex-col gap-2.5">
-                <div className="p-3.5 rounded-xl border border-black/[0.06] dark:border-white/[0.08] bg-neutral-50 dark:bg-neutral-800/50 flex items-center justify-between">
+                <div className="p-3.5 rounded-xl border border-black/[0.06] dark:border-white/[0.08] bg-neutral-50 dark:bg-[#1C222E] flex items-center justify-between transition-colors">
                   <div>
-                    <span className="text-[11px] text-neutral-400 font-medium">微信 (WeChat)</span>
-                    <p className="text-sm font-mono font-semibold text-heading">15093051996</p>
+                    <span className="text-[11px] text-neutral-500 dark:text-neutral-400 font-medium">微信 (WeChat)</span>
+                    <p className="text-sm font-mono font-semibold text-neutral-900 dark:text-neutral-100 mt-0.5">15093051996</p>
                   </div>
                   <button
                     onClick={() => copyToClipboard('15093051996', 'modalWechat')}
-                    className="h-8 px-3 rounded-lg bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 text-xs font-medium flex items-center gap-1"
+                    className="h-8 px-3 rounded-lg bg-neutral-900 text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 text-xs font-medium flex items-center gap-1.5 transition-colors shadow-sm"
                   >
-                    {copiedField === 'modalWechat' ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                    {copiedField === 'modalWechat' ? <Check className="w-3.5 h-3.5 text-emerald-500 dark:text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copiedField === 'modalWechat' ? '已复制' : '复制'}</span>
                   </button>
                 </div>
 
-                <div className="p-3.5 rounded-xl border border-black/[0.06] dark:border-white/[0.08] bg-neutral-50 dark:bg-neutral-800/50 flex items-center justify-between">
+                <div className="p-3.5 rounded-xl border border-black/[0.06] dark:border-white/[0.08] bg-neutral-50 dark:bg-[#1C222E] flex items-center justify-between transition-colors">
                   <div>
-                    <span className="text-[11px] text-neutral-400 font-medium">电子邮箱 (Email)</span>
-                    <p className="text-sm font-mono font-semibold text-heading">yinqijun@aliyun.com</p>
+                    <span className="text-[11px] text-neutral-500 dark:text-neutral-400 font-medium">电子邮箱 (Email)</span>
+                    <p className="text-sm font-mono font-semibold text-neutral-900 dark:text-neutral-100 mt-0.5">yinqijun@aliyun.com</p>
                   </div>
                   <a
                     href="mailto:yinqijun@aliyun.com"
-                    className="h-8 px-3 rounded-lg border border-black/[0.1] dark:border-white/[0.1] text-heading text-xs font-medium flex items-center gap-1 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                    className="h-8 px-3 rounded-lg border border-black/[0.1] dark:border-white/[0.12] bg-white dark:bg-neutral-800/80 text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-700 text-xs font-medium flex items-center gap-1.5 transition-colors shadow-sm"
                   >
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    <ExternalLink className="w-3.5 h-3.5 text-neutral-500 dark:text-neutral-400" />
                     <span>发邮件</span>
                   </a>
                 </div>
 
-                <div className="p-3.5 rounded-xl border border-black/[0.06] dark:border-white/[0.08] bg-neutral-50 dark:bg-neutral-800/50 flex items-center justify-between">
+                <div className="p-3.5 rounded-xl border border-black/[0.06] dark:border-white/[0.08] bg-neutral-50 dark:bg-[#1C222E] flex items-center justify-between transition-colors">
                   <div>
-                    <span className="text-[11px] text-neutral-400 font-medium">手机电话 (Phone)</span>
-                    <p className="text-sm font-mono font-semibold text-heading">150-9305-1996</p>
+                    <span className="text-[11px] text-neutral-500 dark:text-neutral-400 font-medium">手机电话 (Phone)</span>
+                    <p className="text-sm font-mono font-semibold text-neutral-900 dark:text-neutral-100 mt-0.5">150-9305-1996</p>
                   </div>
                   <a
                     href="tel:15093051996"
-                    className="h-8 px-3 rounded-lg border border-black/[0.1] dark:border-white/[0.1] text-heading text-xs font-medium flex items-center gap-1 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                    className="h-8 px-3 rounded-lg border border-black/[0.1] dark:border-white/[0.12] bg-white dark:bg-neutral-800/80 text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-700 text-xs font-medium flex items-center gap-1.5 transition-colors shadow-sm"
                   >
-                    <Phone className="w-3.5 h-3.5" />
+                    <Phone className="w-3.5 h-3.5 text-neutral-500 dark:text-neutral-400" />
                     <span>呼叫</span>
                   </a>
                 </div>
