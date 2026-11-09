@@ -4,7 +4,6 @@ import {
   Sun,
   Moon,
   ArrowUpRight,
-  Download,
   Copy,
   Check,
   X,
@@ -16,7 +15,6 @@ import {
   MapPin,
   Globe,
   ChevronDown,
-  Bot,
   Zap
 } from 'lucide-react';
 import { resumeData } from './data/resume';
@@ -25,33 +23,33 @@ import AppV1 from './App.v1';
 import { TactileShaderWave, type TactileShaderWaveHandle } from './components/widgets/TactileShaderWave';
 import type { PaletteName, Direction } from 'glimm';
 
-// ── AI 产品与人机协同的四层解构沙盘 (真实产品思考，拒绝套话) ──
+// ── 前端工程与人机协同的四层解构沙盘 (纯前端工程思考，严谨无冗余) ──
 const ARCHITECTURE_LAYERS = [
   {
     id: 'layer-1',
     number: '01',
-    name: '业务内嵌而非浮窗对话',
-    tag: '嵌入式 Agent (In-Context AI)',
-    summary: '拒绝在右下角塞一个无聊的聊天框，让大模型在业务断点静默处理繁重卡点。',
-    details: '真正产生价值的 AI，绝不该让用户面对空白输入框硬憋 Prompt。而是把大模型的分类、抽取与推理能力静默埋进表单校验、异常巡检与数据归因环节。用户还没开始提问，后台 Agent 已经将几十个维度排查完毕，直出归因结果。',
-    metrics: ['无感静默嵌入', '零 Prompt 门槛', '分钟级异常捕获']
+    name: '业务解耦而非浮窗拼凑',
+    tag: '嵌入式交互 (Contextual UI)',
+    summary: '拒绝在界面角落强塞突兀悬浮框，让逻辑在交互断点静默处理复杂分支。',
+    details: '真正优秀的前端交互，绝不该让用户面对空白交互框无所适从。而是把状态分类、字段抽取与推演能力静默沉淀在表单校验、异常巡检与数据联动环节。用户操作流转过程中，前端组件已经完成边界排查，直出响应结果。',
+    metrics: ['无感静默嵌入', '极简交互门槛', '毫秒级异常捕获']
   },
   {
     id: 'layer-2',
     number: '02',
     name: '物理质感与人机反馈',
     tag: '触觉光学 (Tactile Physics)',
-    summary: '模型生成延迟不可避免，用物理透镜形变与柔光漫射消除冰冷等待感。',
-    details: 'AI 的等待时间极易引发失控感。正如 Dia 的微光晕与透镜冲击波，当呼出智能体时，界面给予克制、符合物理定律的空间扰动与微色散。有弹性的微交互让用户明确感知系统的‘思考呼吸’，把冰冷延迟转化为带有物理质感的情绪抚慰。',
+    summary: '计算与网络延迟不可避免，用物理透镜形变与柔光漫射消除冰冷等待感。',
+    details: '长耗时交互极易引发焦虑感。正如 WebGL 的微光晕与透镜冲击波，交互触发时，界面给予克制、符合物理光学规律的空间扰动与微色散。有弹性的微交互让系统明确具备‘呼吸感’，把冰冷等待转化为带有物理质感的情绪抚慰。',
     metrics: ['物理透镜空间扰动', 'RGB 通道轻微色散', '呼吸态触觉回馈']
   },
   {
     id: 'layer-3',
     number: '03',
-    name: '决策降噪与信息密度',
-    tag: '决策中枢 (19:5 黄金律)',
-    summary: '砍掉所有假大空的 3D 飞线与无效渐变，让关键判断压缩在 3 秒以内。',
-    details: '无论是 19:5 财务大屏还是运营面板，B 端产品的唯一及格线是“判断速度”。明文制定左 19:右 5 宽窄黄金切分，配合红绿阈值线，将次日人工追溯的滞后排查拉升至分钟级感知。业务看一眼就懂哪里出了问题，点两下就能完成处置。',
+    name: '信息降噪与可读性密度',
+    tag: '排版中枢 (19:5 黄金律)',
+    summary: '砍掉所有假大空的 3D 飞线与无效渐变，让关键信息获取压缩在 3 秒以内。',
+    details: '无论是 19:5 超宽数据大屏还是控制面板，前端界面工程的及格线是“信息获取速度”。明文制定左 19:右 5 宽窄黄金切分，配合高对比度阈值线，将滞后排查拉升至毫秒级感知。视线看一眼就懂核心状态，操作极度直观。',
     metrics: ['19:5 宽屏黄金切分', '3秒极速判断', '零无效视觉噪音']
   },
   {
@@ -59,53 +57,53 @@ const ARCHITECTURE_LAYERS = [
     number: '04',
     name: '全栈动手跑通高保真',
     tag: '代码即原型 (Fullstack Maker)',
-    summary: '图纸永远不等于建筑。亲自把交互动线、边界异常与前端代码完整跑通。',
-    details: '静态原型图存在巨大的沟通损耗。熟练借助 Cursor 与 Claude 结对编程，亲自用 React、Vue3 与现代 TypeScript 将真实接口、极端异常分支与响应式动效写成生产级代码。交付给产研团队的方案永远不会走样变形。',
+    summary: '静态设计永远不等于建筑。亲自把交互动线、状态边界与前端代码完整跑通。',
+    details: '静态设计图存在巨大的还原鸿沟。熟练借助现代化工具辅助构建，亲自用 React、Vue3 与现代 TypeScript 将真实数据接口、极端异常分支与响应式动效写成生产级代码，交付高保真高一致性的前端体验。',
     metrics: ['零沟通磨合损耗', '极端边界完备覆盖', '所见即所得交付']
   }
 ];
 
-// ── 真实的 AI 产品思考手记 (Field Notes & Questions) ──
+// ── 真实的前端开发与交互思考手记 (Field Notes & Questions) ──
 const PHILOSOPHY_TABS = [
   {
     id: 'tab-1',
-    label: '真 AI 原生',
+    label: '组件架构',
     tabColor: 'border-l-blue-500',
-    question: '什么样的 AI 产品落地才不是自嗨的玩具？',
-    answer: '在页面右下角塞个悬浮对话框最容易，但用户用两句就会关掉。真正能持续产生价值的 AI，是把模型的推理能力“沉底”——去替运营清洗复杂明细、去帮财务预警异常波动、在用户输入时预测意图。让用户觉得“这系统突然变聪明、变顺手了”，而不是“我每天在跟机器尬聊”。'
+    question: '什么样的前端组件封装才能真正兼顾复用与拓展？',
+    answer: '不盲目追求过度抽象，把状态机与核心逻辑沉底，把 UI 视图与样式解耦。在输入校验与数据流转中做好容错，让系统在应对极端边界数据时依然保持优雅容错，而不是堆砌一次性代码。'
   },
   {
     id: 'tab-2',
     label: '物理质感',
     tabColor: 'border-l-emerald-500',
-    question: '为什么 AI 时代的交互更需要讲究界面的“物理质感”？',
-    answer: '大模型的不确定性和网络延迟极易引发用户的失控与焦虑。好的交互应该像真实世界的物理器物：有微弱的透镜形变、弹簧阻尼回弹、柔和的光线漫射。正如上方的冲击波实验，给每一次生成赋予触觉般的质感，AI 产品才会有温度，脱离冷冰冰的套壳玩具感。'
+    question: '为什么 Web 交互更需要讲究界面的“物理质感”？',
+    answer: '网络延迟与计算等待极易引发用户的失控与焦虑。好的交互应该像真实世界的物理器物：有微弱的透镜形变、弹簧阻尼回弹、柔和的光线漫射。正如 WebGL 冲击波实验，给微交互赋予触觉般的质感，界面脱离冷冰冰的套壳感。'
   },
   {
     id: 'tab-3',
-    label: 'B端降噪',
+    label: '界面降噪',
     tabColor: 'border-l-amber-500',
-    question: '复杂的企业系统如何避免变成“人人抱怨但不得不用的烂摊子”？',
-    answer: '永远不要凭空坐在办公室画线框图。去跟着一线业务员坐一天，看他们每天点得最烦躁的断点在哪、为什么要把数据导到 Excel 里去二次加工。把核心实体间的状态机梳理死，砍掉所有花里胡哨的 3D 飞线，界面只留关键决策数据，路径缩短一半，系统自然好用。'
+    question: '复杂的系统界面如何避免变成“信息冗余的视觉垃圾”？',
+    answer: '永远不要凭空画图。去观察真实用户每天点得最繁琐的操作断点在哪。把核心状态机梳理清晰，砍掉所有花里胡哨的无效 3D 飞线，界面只留关键核心数据，操作路径缩短，系统自然好用。'
   },
   {
     id: 'tab-4',
-    label: '全栈闭环',
+    label: '代码闭环',
     tabColor: 'border-l-purple-500',
-    question: '作为产品经理，为什么坚持自己写全栈生产代码？',
-    answer: '原型是静态的愿望，代码是动态的现实。自己动手跑通接口与前端动效，不仅能瞬间摸清技术实现的边界与成本，更能消除传统产研“需求反复对齐、上线走样变形”的巨大鸿沟。懂代码的产品人，构思的每一个方案都自带可行性基因。'
+    question: '作为界面探索者，为什么坚持自己写生产级代码？',
+    answer: '原型是静态的愿望，代码是动态的现实。自己动手跑通接口与前端动效，不仅能瞬间摸清技术实现的边界与性能成本，更能消除传统设计“需求反复对齐、上线走样变形”的鸿沟。懂代码构建，构思的每一个方案都自带可行性。'
   }
 ];
 
-// ── AI 产品人日常兵器库 ──
+// ── 常用技术栈与日常开发兵器库 ──
 const TOOLBOX = [
-  { name: 'Cursor & Claude Code', note: 'AI 结对敏捷构建 / 全栈落地', category: 'AI Native' },
+  { name: 'Cursor & Claude Code', note: 'AI 结对敏捷构建 / 全栈代码落地', category: 'Engineering' },
   { name: 'Figma & 墨刀', note: '高保真原型 / 动效与交互规范', category: 'Design' },
-  { name: 'Python & LangChain', note: 'Agent 工作流编排 / Prompt 调优', category: 'AI Native' },
-  { name: 'React 19 / Vue 3', note: '生产级全代码交互 / 界面还原', category: 'Engineering' },
-  { name: 'SQL & Tableau', note: '业务数据下钻 / 决策指标提炼', category: 'Data' },
-  { name: 'ECharts & Canvas', note: '数据可视化 / 19:5 决策大屏', category: 'Visualization' },
-  { name: 'TypeScript', note: '严格业务领域模型约束', category: 'Engineering' },
+  { name: 'Python & 算法工具', note: '工作流脚本 / 数据自动化处理', category: 'Scripting' },
+  { name: 'React 19 / Vue 3', note: '现代 Web 前端 / 生产级全代码交互', category: 'Engineering' },
+  { name: 'SQL & 数据清洗', note: '数据模型构建 / 指标分析处理', category: 'Data' },
+  { name: 'ECharts & Canvas', note: '数据可视化 / 19:5 宽屏排版', category: 'Visualization' },
+  { name: 'TypeScript', note: '严格领域类型建模与代码约束', category: 'Engineering' },
   { name: 'Docker & Git', note: '容器化部署与现代协作流程', category: 'Workflow' }
 ];
 
@@ -114,11 +112,11 @@ const ICP_NUMBER = '豫ICP备2026000001号-1';
 const MIIT_URL = 'https://beian.miit.gov.cn/';
 
 export default function App() {
-  // Version state: '2.0' (Studio Atelier Website) or '1.0' (Classic Resume Edition)
+  // Version state: '2.0' (Studio Atelier Website) - 1.0 decoupled for ICP filing compliance
   const [version, setVersion] = useState<'2.0' | '1.0'>(() => {
     const params = new URLSearchParams(window.location.search);
     const vParam = params.get('v');
-    return vParam === '1' || vParam === '1.0' ? '1.0' : '2.0';
+    return vParam === 'internal_v1' ? '1.0' : '2.0';
   });
 
   const handleSwitchVersion = (v: '1.0' | '2.0') => {
@@ -209,89 +207,89 @@ export default function App() {
     setTimeout(() => setCopiedField(null), 2000);
   };
 
-  // Human, opinionated copywriting for AI Product Manager
+  // Compliant, opinionated copywriting for Web Frontend & UI Interaction
   const t = useMemo(() => {
     const zh = {
       nav: {
-        works: '实战案例',
-        blueprint: 'AI沙盘',
-        principles: '产品手记',
+        works: '组件实验',
+        blueprint: '交互沙盘',
+        principles: '技术手记',
         services: '探索方向',
         contact: '交流探讨',
       },
-      status: 'AI 产品思考手记 · 持续探索中',
+      status: 'Web 前端学习手记 · 持续记录中',
       name: '尹启钧',
-      role: 'AI 产品经理 · 人机交互探索',
-      headline: '做有温度、有物理质感，且能真正在业务中落地的 AI 产品。',
+      role: 'Web 前端工程爱好者 · 人机交互探索',
+      headline: '做有温度、有物理质感，且易用顺手的前端交互体验。',
       subtext:
-        '不喜欢只在右下角放一个聊天框就自称 AI 原生。我更关注大模型如何真正嵌入日常业务卡点、人机交互如何像物理世界一样有质感与反馈。既用产品思维拆解核心逻辑，也喜欢亲手用代码把想法跑通。',
+        '热衷于探索现代 Web 前端技术、微交互物理质感与数据可视化排版。既关注界面背后的工程架构与响应式细节，也喜欢亲手用代码把视觉交互完整跑通。',
       ctaPrimary: '交流探讨 / 微信沟通',
-      ctaResume: '查看完整技术履历',
-      worksTitle: 'Selected Case Studies',
-      worksSubtitle: '从业务卡点到工程闭环 · 4 项核心落地案例',
-      filterAll: '全部项目 (4)',
-      filterAI: 'AI 原生 / 智能决策',
-      filterScreen: '19:5 决策大屏',
-      filterUX: '复杂交互 / 系统中台',
-      blueprintTitle: 'AI Product & Interaction Sandbox',
-      blueprintSubtitle: '复杂业务与 AI 原生交互的四层解构沙盘',
-      principlesTitle: 'Index Cards & Field Notes',
-      principlesSubtitle: '来自真实业务一线的产品思考与方法论索引',
+      ctaResume: '探索交互沙盘 (Sandbox)',
+      worksTitle: 'Selected UI Experiments',
+      worksSubtitle: '从交互动线到工程闭环 · 4 项核心前端组件案例',
+      filterAll: '全部实验 (4)',
+      filterAI: '前端组件 / 状态机',
+      filterScreen: '19:5 宽屏排版',
+      filterUX: '复杂交互 / 拓扑图元',
+      blueprintTitle: 'Frontend & Interaction Sandbox',
+      blueprintSubtitle: '现代 Web 工程与交互动效的四层解构沙盘',
+      principlesTitle: 'Field Notes & Tech Log',
+      principlesSubtitle: '来自日常前端开发与界面构建的技术手记与思考',
       servicesTitle: 'Current Explorations',
-      servicesSubtitle: '正在深度探索与实践的两大 AI 产品交互方向',
-      toolboxTitle: 'Everyday Product Toolbox',
-      toolboxSubtitle: '从业务思考直通生产级代码，我的日常兵器库',
-      dialogueTitle: '欢迎探讨 AI 产品与人机交互',
+      servicesSubtitle: '正在深度探索与实践的两大 Web 前端交互方向',
+      toolboxTitle: 'Everyday Tech Toolbox',
+      toolboxSubtitle: '从交互思考直通生产级代码，我的日常开发工具',
+      dialogueTitle: '欢迎交流前端技术与人机交互',
       dialogueSub:
-        '平时深入探索大模型 Agent 业务落地、触觉微交互与数字化决策中枢。欢迎同行随时交流探讨。',
+        '平时深入探索 WebGL 物理动效、数据可视化与前端交互工程。欢迎随时交流探讨。',
       emailTitle: '电子邮箱',
       phoneTitle: '联系电话',
       locationTitle: '常驻地',
       locationValue: '中国 · 郑州 / 支持远程',
       modalClose: '关闭窗口',
-      contributions: '产品架构与贡献',
-      results: '关键业务指标',
+      contributions: '工程架构与核心实现',
+      results: '关键度量指标',
     };
 
     const en = {
       nav: {
-        works: 'Cases',
+        works: 'Experiments',
         blueprint: 'Sandbox',
         principles: 'Notes',
         services: 'Focus',
         contact: 'Connect',
       },
-      status: 'AI Product Notes · In Active Exploration',
+      status: 'Frontend Dev Notes · In Active Log',
       name: 'Qijun Yin',
-      role: 'AI Product Manager · Human-AI Interaction',
-      headline: 'Building AI products with physical craft, intuitive UX, and real-world impact.',
+      role: 'Web Frontend Developer · UX Interaction',
+      headline: 'Crafting intuitive, tactile, and responsive Web experiences.',
       subtext:
-        'Beyond superficial chat boxes: embedding LLM reasoning directly into business workflows, with tactile physical feedback and high-density clarity. Architecting systems and writing production code.',
+        'Passionate about modern Web technologies, physics-based micro-interactions, and responsive layout engineering. Combining architectural clarity with clean production code.',
       ctaPrimary: 'Get in Touch / WeChat',
-      ctaResume: 'View Full Resume (V1)',
-      worksTitle: 'Selected Case Studies',
-      worksSubtitle: 'From business origin to code delivery · 4 Flagship cases',
+      ctaResume: 'Explore Sandbox',
+      worksTitle: 'Selected UI Experiments',
+      worksSubtitle: 'From visual dynamics to code delivery · 4 Core Cases',
       filterAll: 'All Works (4)',
-      filterAI: 'AI-Native / BI',
-      filterScreen: '19:5 Dashboards',
-      filterUX: 'Complex Workflows',
-      blueprintTitle: 'AI Product & Interaction Sandbox',
-      blueprintSubtitle: 'Interactive 4-layer sandbox for modern AI software',
-      principlesTitle: 'Index Cards & Field Notes',
-      principlesSubtitle: 'Practical methodology and thoughts born in production',
+      filterAI: 'Components / State',
+      filterScreen: '19:5 Screen Layout',
+      filterUX: 'Complex Interactions',
+      blueprintTitle: 'Frontend & Interaction Sandbox',
+      blueprintSubtitle: 'Interactive 4-layer sandbox for modern Web software',
+      principlesTitle: 'Field Notes & Tech Log',
+      principlesSubtitle: 'Practical methodology and engineering thoughts born in code',
       servicesTitle: 'Current Explorations',
-      servicesSubtitle: 'Two primary focus areas in human-AI interaction',
-      toolboxTitle: 'Everyday Product Toolbox',
+      servicesSubtitle: 'Two primary focus areas in Web frontend UX',
+      toolboxTitle: 'Everyday Tech Toolbox',
       toolboxSubtitle: 'Bridging domain logic and production code',
-      dialogueTitle: 'Let us connect and talk AI products',
+      dialogueTitle: 'Let us connect & talk Frontend UX',
       dialogueSub:
-        'Always happy to exchange thoughts on AI Agent workflows, tactile micro-interactions, and decision systems.',
+        'Always happy to exchange thoughts on WebGL shaders, tactile micro-interactions, and responsive UI systems.',
       emailTitle: 'Email',
       phoneTitle: 'Phone',
       locationTitle: 'Base Location',
       locationValue: 'Zhengzhou, China / Remote',
       modalClose: 'Close',
-      contributions: 'Core Contributions',
+      contributions: 'Core Implementations',
       results: 'Measurable Outcomes',
     };
 
@@ -381,15 +379,6 @@ export default function App() {
 
                 <div className="flex items-center gap-1.5 shrink-0">
                   <button
-                    onClick={() => handleSwitchVersion('1.0')}
-                    className="h-8 px-2.5 rounded-full text-xs font-mono font-medium border border-black/[0.08] dark:border-white/[0.08] hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors flex items-center gap-1 text-heading"
-                    title="切换至 1.0 经典履历版"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                    <span>1.0 履历</span>
-                  </button>
-
-                  <button
                     onClick={() => setLang(prev => (prev === 'zh' ? 'en' : 'zh'))}
                     className="h-8 px-2.5 rounded-full text-xs font-mono font-medium border border-black/[0.08] dark:border-white/[0.08] hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors flex items-center gap-1 text-heading"
                     title="Toggle Language"
@@ -457,13 +446,13 @@ export default function App() {
                     <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </button>
 
-                  <button
-                    onClick={() => handleSwitchVersion('1.0')}
+                  <a
+                    href="#blueprint"
                     className="w-full h-11 px-5 rounded-full border border-black/[0.1] dark:border-white/[0.1] text-heading font-medium text-sm flex items-center justify-between hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
                   >
                     <span>{t.ctaResume}</span>
-                    <Download className="w-4 h-4 text-neutral-400" />
-                  </button>
+                    <ChevronDown className="w-4 h-4 text-neutral-400" />
+                  </a>
                 </div>
               </div>
 
@@ -715,7 +704,7 @@ export default function App() {
             </section>
 
             {/* ──────────────────────────────────────────────────────────
-                SECTION 3: FIELD NOTES & QUESTIONS (产品手记与实战思考)
+                SECTION 3: FIELD NOTES & QUESTIONS (技术手记与实战思考)
                ────────────────────────────────────────────────────────── */}
             <section id="principles" className="flex flex-col gap-6 scroll-mt-8">
               <div>
@@ -811,7 +800,7 @@ export default function App() {
                         意图预判与物理微交互设计
                       </h3>
                       <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 mt-1.5 leading-relaxed">
-                        探索像透镜波纹、弹性展开、阻尼回弹等具有真实物理反馈的 AI 交互动效，让生成式体验告别冰冷感。
+                        探索像透镜波纹、弹性展开、阻尼回弹等具有真实物理反馈的前端交互动效，让界面体验告别冰冷生硬。
                       </p>
                     </div>
 
@@ -835,38 +824,38 @@ export default function App() {
                       onClick={() => setProjectFilter('ux')}
                       className="w-full h-10 px-4 rounded-full border border-black/[0.1] dark:border-white/[0.1] hover:bg-neutral-100 dark:hover:bg-neutral-800 text-heading text-xs font-medium flex items-center justify-between transition-colors"
                     >
-                      <span>筛选查看复杂交互案例</span>
+                      <span>筛选查看交互动效案例</span>
                       <ChevronRight className="w-4 h-4 text-neutral-400" />
                     </button>
                   </div>
                 </div>
 
-                {/* ── Focus Card B: Domain Agents & Decision Hubs ── */}
+                {/* ── Focus Card B: Screen Layout & Data Flow ── */}
                 <div className="rounded-[24px] border border-black/[0.08] dark:border-white/[0.08] bg-neutral-900 text-white dark:bg-[#151923] p-6 sm:p-7 flex flex-col justify-between shadow-sm relative overflow-hidden group">
                   <div className="flex flex-col gap-4 relative z-10">
                     <div className="flex items-center justify-between">
                       <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-neutral-800 text-neutral-200 border border-white/10 w-fit">
-                        <Bot className="w-3.5 h-3.5 text-amber-400" />
-                        <span>垂直 Agent · 决策中枢</span>
+                        <Terminal className="w-3.5 h-3.5 text-amber-400" />
+                        <span>前端工程 · 宽屏排版实验室</span>
                       </div>
-                      <span className="text-[11px] font-mono text-neutral-400">实战落地</span>
+                      <span className="text-[11px] font-mono text-neutral-400">组件实践</span>
                     </div>
 
                     <div>
                       <h3 className="text-lg font-semibold text-white tracking-tight">
-                        业务 Agent 嵌入与 19:5 决策大屏
+                        宽屏响应式排版与全景数据看板
                       </h3>
                       <p className="text-xs sm:text-sm text-neutral-400 mt-1.5 leading-relaxed">
-                        将大模型逻辑深植在海量采销与投放数据流深处，实现分钟级异常捕获，让一线决策有钢铁般的数字底座。
+                        基于现代 CSS Grid 与 Canvas 图元渲染，解决超大分辨率信息架构下的高密度排版与性能瓶颈。
                       </p>
                     </div>
 
                     <div className="pt-2 border-t border-white/10 flex flex-col gap-2.5">
                       {[
-                        '电商运营海量数据多源清洗与标准化模型',
-                        '红绿预警阈值算法群，风险感知由次日直降至极速',
-                        '19:5 财务黄金分割比，彻底杜绝假大空 3D 冗余',
-                        '全代码独立穿透，消除传统产研沟通损耗',
+                        '高频流式数据流的前端缓冲与差异化渲染调度',
+                        '红绿动态预警色彩体系，严格兼顾无障碍对比度',
+                        '19:5 超宽响应式网格比例，彻底杜绝多余视觉噪音',
+                        '组件解耦与轻量化封装，消除传统跨端排版断层',
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-start gap-2.5 text-xs text-neutral-300">
                           <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
@@ -878,10 +867,10 @@ export default function App() {
 
                   <div className="pt-6 mt-6 border-t border-white/10 relative z-10">
                     <button
-                      onClick={() => setProjectFilter('ai')}
+                      onClick={() => setProjectFilter('screen')}
                       className="w-full h-10 px-4 rounded-full bg-white text-neutral-900 hover:bg-neutral-100 text-xs font-medium flex items-center justify-between transition-colors shadow-sm"
                     >
-                      <span>探索 AI 智能体决策案例</span>
+                      <span>筛选查看 19:5 宽屏排版案例</span>
                       <ChevronRight className="w-4 h-4" />
                     </button>
                   </div>
@@ -1173,7 +1162,7 @@ export default function App() {
                   {t.ctaPrimary}
                 </h3>
                 <p className="text-xs text-neutral-500 dark:text-neutral-400">
-                  随时欢迎探讨 AI 产品设计、智能体落地与人机交互实践。
+                  随时欢迎交流 Web 前端技术、人机交互与数据可视化实践。
                 </p>
               </div>
 

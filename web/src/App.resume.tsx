@@ -101,7 +101,7 @@ export default function App() {
       role: '高阶产品架构师 / AI-Native Builder',
       headline: '以产品架构思维与 AI 原生能力，将复杂业务解构成极致体验与商业增长。',
       subtext:
-        '5年+ 产研架构与全栈交付经验。主导大屏中台、数字孪生、社交电商与 AI 智能体产品从 0 到 1 落地。',
+        '5年+ 前端工程与全栈交付经验。主导大屏中台、数字孪生、全景看板与交互组件从 0 到 1 落地。',
       ctaPrimary: '预约沟通 / 联系我',
       ctaResume: '下载 PDF 完整简历',
       worksTitle: 'Selected Works',
@@ -563,7 +563,7 @@ export default function App() {
                       {[
                         '领域驱动设计 (DDD) 与高扩展业务实体建模',
                         '细粒度 RBAC 权限引擎、多租户隔离与审批流',
-                        '19:5 财务级超宽数据大屏与金融级风控核算',
+                        '19:5 级超宽数据大屏与极简排版响应式规范',
                         '全流程产研设计系统 (Design System) 统一规范',
                         ...(includeFullCode ? ['配套完整交互原型文档与前端工程落地 (React/Vue/TS)'] : []),
                       ].map((item, idx) => (

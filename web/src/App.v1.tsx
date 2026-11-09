@@ -95,9 +95,9 @@ export default function AppV1({ onSwitchVersion }: { onSwitchVersion?: (v: '1.0'
         endorsements: '业界评价',
         contact: '联系合作',
       },
-      status: 'AI 产品经理 · 完整职业履历',
+      status: 'Web 前端工程爱好者 · 个人技术档案',
       name: '尹启钧',
-      role: 'AI 产品经理 · 人机交互与数字化中枢',
+      role: '前端工程师 · 人机交互探索',
       headline: '把大模型推理做进业务卡点，以人机交互美学与全栈能力打造扎实产品。',
       subtext:
         '多年深耕 B 端决策大屏、数字化中台与 AI 原生应用落地。既从第一线拆解业务领域逻辑与状态机，也熟练运用 Cursor/Claude 亲自跑通生产级高保真代码。',
